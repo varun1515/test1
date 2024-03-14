@@ -12,22 +12,20 @@ function App() {
 
 
 function Counter() {
-  const [count, setCount] = useState(4)
+  const [count, setCount] = useState(4);
 
-  function changeCount(amount) {
-    setCount(prevCount => prevCount + amount)
+  function changeCount(count) {
+    setCount(prevCount => prevCount + count);
   }
 
-  function resetCount() {
-    setCount(0)
-  }
+
 
   return (
     <>
+      <h2>test</h2>
       <span>{count}</span>
-      <button onClick={() => changeCount(1)}>+</button>
-      <button onClick={() => changeCount(-1)}>-</button>
-      <button onClick={() => resetCount()}>Reset</button>
+      <button onClick={() => changeCount(1)}>+1</button>
+      <button onClick={() => changeCount(-1)}>-1</button>
     </>
   )
 }

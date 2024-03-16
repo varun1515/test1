@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function App() {
   return (
@@ -14,6 +14,12 @@ function App() {
 function Counter() {
   const [count, setCount] = useState(4);
 
+  const [effectValue, seteffectValue] = useState(0);
+
+  useEffect(() => {
+    seteffectValue(count);
+  },[count])
+
   function changeCount(count) {
     setCount(prevCount => prevCount + count);
   }
@@ -26,6 +32,7 @@ function Counter() {
       <span>{count}</span>
       <button onClick={() => changeCount(1)}>+1</button>
       <button onClick={() => changeCount(-1)}>-1</button>
+      <h3>{effectValue}</h3>
     </>
   )
 }
